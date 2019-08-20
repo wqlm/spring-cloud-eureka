@@ -1,5 +1,10 @@
 
 eureka:
+  server:
+    # 是否启动自我保护，默认true。偶然的网络的抖动可能导致一段时间内心跳失败。开启自我保护后，一段时间内心跳失败率只要不
+    #高于阀值，都视为网络抖动，eureka 不会注销该服务。开发环境下为了保证服务一定在线，可以关掉自我保护
+    enable-self-preservation: false
+
   client:
     # 是否从 EurekaServer 获取注册信息，默认为true。 一般单节点 EurekaServer 设置为false，多节点 EurekaServer 设置为true，EurekaClient 设置为true
     fetch-registry: false
