@@ -1,0 +1,19 @@
+
+eureka:
+  client:
+    # 是否从 EurekaServer 获取注册信息，默认为true。 一般单节点 EurekaServer 设置为false，多节点 EurekaServer 设置为true，EurekaClient 设置为true
+    fetch-registry: false
+
+    # 是否将自己注册在 EurekaServer 上，默认为true。由于当前应用就是EurekaServer，所以置为false
+    register-with-eureka: false
+
+    service-url:
+      # Eureka Server 的地址
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: eureka
+
+server:
+  port: 8761
